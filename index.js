@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-mongoose.connect("mongodb+srv://suraj:singh@cluster0.alfwjtu.mongodb.net/data?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true, useUnifiedTopology: true
 })
     .then(() => console.log("db is connected"))
